@@ -1,0 +1,10 @@
+%section
+  %h2 Export to PDF
+  %p
+    Presentations can be
+    = succeed "," do
+      %a{:href => "https://github.com/hakimel/reveal.js#pdf-export"} exported to PDF
+    below is an example that's been uploaded to SlideShare.
+  %iframe#slideshare{:allowfullscreen => "", :height => "356", :src => "http://www.slideshare.net/slideshow/embed_code/13872948", :style => "margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px", :width => "455"}
+  :javascript
+    document.getElementById('slideshare').attributeName = 'allowfullscreen';

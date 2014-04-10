@@ -1,0 +1,27 @@
+%section#themes
+  %h2 Themes
+  %p
+    Reveal.js comes with a few themes built in:
+    %br/
+    %a{:href => "?#/themes"} Default
+    \-
+    %a{:href => "?theme=sky#/themes"} Sky
+    \-
+    %a{:href => "?theme=beige#/themes"} Beige
+    \-
+    %a{:href => "?theme=simple#/themes"} Simple
+    \-
+    %a{:href => "?theme=serif#/themes"} Serif
+    \-
+    %a{:href => "?theme=night#/themes"} Night
+    %br/
+    %a{:href => "?theme=moon#/themes"} Moon
+    \-
+    %a{:href => "?theme=solarized#/themes"} Solarized
+  %p
+    %small
+      * Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the
+      %code &lt;head&gt;
+      using a
+      = succeed "." do
+        %code &lt;link&gt;

@@ -1,0 +1,30 @@
+%section{"data-state" => "customevent"}
+  %h2 Custom Events
+  %p
+    Additionally custom events can be triggered on a per slide basis by binding to the
+    %code data-state
+    name.
+  %pre
+    %code{:contenteditable => "", "data-trim" => "", :style => "font-size: 18px; margin-top: 20px;"}
+      :preserve
+        
+        Reveal.addEventListener( 'customevent', function() {
+          console.log( '"customevent" has fired' );
+        } );
+                      %section
+  %section{"data-background" => "#007777"}
+    %h2 Slide Backgrounds
+    %p
+      Set
+      %code data-background="#007777"
+      on a slide to change the full page background to the given color. All CSS color formats are supported.
+    %a.image.navigate-down{:href => "#"}
+      %img{:alt => "Down arrow", :height => "238", :src => "https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png", :width => "178"}/
+  %section{"data-background" => "https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"}
+    %h2 Image Backgrounds
+    %pre
+      %code &lt;section data-background="image.png"&gt;
+  %section{"data-background" => "https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png", "data-background-repeat" => "repeat", "data-background-size" => "100px"}
+    %h2 Repeated Image Backgrounds
+    %pre
+      %code{:style => "word-wrap: break-word;"} &lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;
