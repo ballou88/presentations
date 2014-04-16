@@ -1,0 +1,25 @@
+%section
+  %h2 Tap part 2
+  %h3 Prevent future errors
+  .fragment
+    %h5 The easy but brittle way
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          def create_new_user(params)
+            user = User.create(params)
+            if user.valid?
+              UserMailer.deliver_welcome_email(user)
+            end
+            new_user # We have to add this to return the user
+          end
+  .fragment
+    %h5 A better way
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          def create_new_user(params)
+            User.create(params).tap do |user|
+              User.deliver_welcome_email(user) if user.valid?
+            end
+          end

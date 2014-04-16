@@ -1,0 +1,19 @@
+%section
+  %h2 detect/find
+  .fragment
+    %h5 A simple example
+    %pre
+      %code{"data-trim" => ""}
+        = preserve do
+          numbers = [1,2,3,4,5]
+          number = numbers.detect{ |number| number > 2}
+          number # => 3
+  .fragment
+    %h5 A more complex example
+    %pre
+      %code{"data-trim" => ""}
+        = preserve do
+          users = User.where(admin: true)
+          \# Is there a admin with the name mike?
+          users.detect{ |user| user.name == 'mike' }
+

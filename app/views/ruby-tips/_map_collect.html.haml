@@ -1,0 +1,18 @@
+%section
+  %h2 map/collect
+  .fragment
+    %h5 A simple example
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          numbers = [1,2,3,4,5]
+          squares = numbers.map{ |number| number**2 }
+          squares # => [1,4,9,16,25]
+  .fragment
+    %h5 A more complex example
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          users = User.where(admin: true)
+          admin_names = users.collect(&:name)
+          admin_names # => ["Mike", "John", "Dave"]

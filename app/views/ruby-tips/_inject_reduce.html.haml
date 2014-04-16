@@ -1,0 +1,22 @@
+%section
+  %h2 inject/reduce
+  .fragment
+    %h5 A simple example
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          numbers = [1,2,3,4,5]
+          sum = numbers.inject(0){ |sum, number| sum += number } # => 15
+          # Or we can write it even shorter
+          sum = numbers.inject(0, &:+) # => 15
+  .fragment
+    %h5 A more complex example
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          users = User.where(admin: true)
+          admin_name_count = users.inject(Hash.new(0)) do |hsh, user|
+            hsh[user.name] += 1
+            hsh
+          end
+          admin_name_count # => {"mike": 1, "john": 2, "dave": 1}
