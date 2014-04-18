@@ -4,14 +4,8 @@
     %pre
       %code{"data-trim" => ""}
         :preserve
-          numbers = [1,2,3,4,5]
-          sum_of_suqares = numbers.collect{ |n| n**2 }.inject(0,&:+)
-  .fragment
-    %h5 I want to see the intermediate values without breaking the code
-    %pre
-      %code{"data-trim" => ""}
-        :preserve
-          numbers = [1,2,3,4,5]
-          sum_of_suqares = numbers.collect{ |n| n**2 }.tap{ |squares| puts squares }.inject(0,&:+)
-          # [1,4,9,16,25]
-          # => 55
+          grade_book = Hash.new{ |hash, grade| hash[grade] = []}
+          grade_book["A"] << "John"
+          grade_book["B"] << "Mike"
+          grade_book["A"] << "Tom"
+          p grade_book # => {"A" => ["John", "Tom"], "B" =>  ["Mike"]}

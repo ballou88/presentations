@@ -1,0 +1,18 @@
+%section#themes
+  %h2 Fetch part 2
+  .fragment
+    %h5 Allow you to use null objects easily with Activerecord
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          user = User.find_by_id(id: 1232)
+          user.name # => Undefined method 'name' for nil:NilClass
+
+          # so we usuall nil check
+          if user
+            user.name # => John Doe
+          end
+
+          # we can do it much cleaner
+          user = User.where(id: 1233).fetch(0, NullUser.new)
+          user.name # => Unknown user

@@ -1,0 +1,21 @@
+%section
+  %h2 Fetch
+  .fragment
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          colors = { apple: "red", banana: "yellow", grape: "green" }
+          colors[:apple].length # => 3
+          colors[:watermelon].length # => Undefined method length for nil class
+  .fragment
+    %h5 Better errors for easier debugging
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          colors.fetch(:watermelon) # => KeyError: key not found: :watermelon
+  .fragment
+    %h5 Provide a default
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          colors.fetch(:apple, "").length # => 0
