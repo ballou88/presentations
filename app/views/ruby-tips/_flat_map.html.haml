@@ -1,0 +1,18 @@
+%section
+  %h2 flat_map
+  .fragment
+    %h5 What I see a lot
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          numbers = [[1,2],[3,4],5]
+          squares = numbers.map{ |number| number }.flatten
+          squares # => [1,2,3,4,5]
+  .fragment
+    %h5 There is a better way
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          numbers = [[1,2],[3,4],5]
+          squares = numbers.flat_map{ |number| number }
+          squares # => [1,2,3,4,5]

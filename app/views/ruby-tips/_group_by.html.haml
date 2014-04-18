@@ -1,0 +1,8 @@
+%section
+  %h2 group_by
+  .fragment
+    %pre
+      %code{"data-trim" => ""}
+        :preserve
+          numbers = (1..10).group_by { |i| i%3 }
+          numbers # => {0 => [3,6,9], 1 => [1,4,7,10], 2 => [2,5,8]}
